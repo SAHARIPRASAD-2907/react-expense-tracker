@@ -12,7 +12,7 @@ function AppRouter() {
       <Route path="/" component={Dashboard} exact={true} />
       <Route path="/create" component={AddExpense} exact />
       <Route path="/help" component={HelpPage} exact />
-      <Route path="/edit/:id" component={Edit} exact />
+      <Route path="/edit/:id" component={Edit} />
       <Route component={Error404} />
     </Switch>
   );
