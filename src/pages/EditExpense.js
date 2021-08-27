@@ -1,6 +1,7 @@
 import React from "react";
 
-function Edit() {
+function Edit(props) {
+  console.log(props);
   return (
     <div>
       <h1>Edit page</h1>
