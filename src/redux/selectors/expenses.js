@@ -1,7 +1,7 @@
 //Get visible expenses
-export default getVisibleExpenses = (
+const getVisibleExpenses = (
   expenses,
-  { text, sortBy, startDate, endDate }
+  { text = "", sortBy, startDate, endDate }
 ) => {
   return expenses
     .filter((expense) => {
@@ -14,13 +14,14 @@ export default getVisibleExpenses = (
         .includes(text.toLowerCase());
 
       return startDateMatch && endDateMatch && textMatch;
-    })
+    }) // eslint-disable-next-line
     .sort((a, b) => {
-      if (sortBy == "date") {
+      if (sortBy === "date") {
         return a.createdAt < b.createdAt ? 1 : -1;
-      }
-      if (sortBy == "amount") {
+      } else if (sortBy === "amount") {
         return a.amount < b.amount ? 1 : -1;
       }
     });
 };
+
+export default getVisibleExpenses;
