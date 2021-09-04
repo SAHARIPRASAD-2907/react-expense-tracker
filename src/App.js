@@ -8,7 +8,6 @@ import configureStore from "./redux/store/configureStore";
 import { Provider } from "react-redux";
 //Redux actions
 import { addExpense } from "./redux/actions/expenses";
-import { setTextFilter } from "./redux/actions/filters";
 import getVisibleExpenses from "./redux/reducers/expenses";
 
 const store = configureStore();
@@ -23,7 +22,6 @@ store.dispatch(
 );
 
 const state = store.getState();
-console.log(state);
 const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
 console.log(visibleExpenses);
 

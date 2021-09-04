@@ -1,8 +1,6 @@
 import { connect } from "react-redux";
 import {
   setTextFilter,
-  setStartDate,
-  setEndDate,
   sortByDate,
   sortByAmount,
 } from "../redux/actions/filters";
